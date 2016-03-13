@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+cd cleare<p id="notice"><%= notice %></p>
 
 <h1>Listing Companies</h1>
 
@@ -34,9 +34,11 @@
 
 <br>
     <h3>Import Companies File</h3>
-    <%= form_tag import_companies_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Upload Companies" %>
-<% end %>
-
+        <%= form_tag import_companies_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Upload Companies", class: 'btn btn-default' %>
+    <% end %>
+    <h3>Download File</h3>
+        <%= link_to "Report", companies_path(format: "csv"), class: 'btn btn-default' %>
+       <br>
 <%= link_to 'New Company', new_company_path %>

@@ -1,4 +1,4 @@
-# This file is used by Rack-based servers to start the application.
+bin/rake db:migrate RAILS_ENV=development# This file is used by Rack-based servers to start the application.
 
 require ::File.expand_path('../config/environment', __FILE__)
 run Rails.application

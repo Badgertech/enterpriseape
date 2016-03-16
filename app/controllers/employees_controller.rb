@@ -3,8 +3,15 @@ class EmployeesController < ApplicationController
 
   # GET /employees
   # GET /employees.json
+
+
   def index
     @employees = Employee.all
+
+    respond_to do |format|
+      format.html
+      format.csv{render text: @employees.to_csv}
+    end
   end
 
   # GET /employees/1
@@ -61,6 +68,10 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def import
+    Employee.import(params[:file])
+      redirect_to employees_path, notice: "Employees Added Successfully"
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_employee

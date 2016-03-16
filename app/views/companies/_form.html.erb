@@ -11,21 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
+<div class="control-group">
+    <%= f.label :name, class: 'control-label' %><br>
+  <div class="control">
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :manager %><br>
-    <%= f.text_field :manager %>
   </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
+ <div class="control-group">
+    <%= f.label :manager, class: 'control-label' %><br>
+    <div class="control">
+      <%= f.text_field :manager %>
+   </div>
   </div>
-  <div class="field">
-    <%= f.label :terms %><br>
-    <%= f.text_field :terms %>
+ <div class="control-group">
+    <%= f.label :status, class: 'control-label' %><br>
+    <div class="control">
+      <%= f.text_field :status %>
+   </div>
+  </div>
+<div class="control-group">
+    <%= f.label :terms, class: 'control-label' %><br>
+    <div class="control">
+      <%= f.text_field :terms  %>
+  </div>
   </div>
   <div class="actions">
     <%= f.submit %>

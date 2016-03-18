@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :purchases
   resources :employees do
     collection {post :import}
   end

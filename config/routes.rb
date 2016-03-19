@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :purchases
+
   resources :employees do
     collection {post :import}
   end
@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
 
 
-  resources :invoices
+  resources :invoices do
+    resources :purchases, except: [:index], controller: 'invoices/purchases'
+  end
  root to: 'welcome#index'
 end

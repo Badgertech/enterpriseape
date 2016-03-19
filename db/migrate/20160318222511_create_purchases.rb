@@ -4,7 +4,7 @@ class CreatePurchases < ActiveRecord::Migration
       t.string :name
       t.string :category
       t.integer :quantity
-      t.string :invoice
+      t.refereences :invoice
       t.string :references
 
       t.timestamps null: false

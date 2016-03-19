@@ -19,6 +19,29 @@
   <strong>Salesperson:</strong>
   <%= @invoice.salesperson %>
 </p>
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quatnity</th>
+        </tr>
+        </thead>
+          <tbody>
+          <% @purchases.each do |purchases| %>
+            <tr>
+              <td><h4><%= purchases.name %></h4></td>
+              <td><h4><%= purchases.category %></h4></td>
+              <td><h4><%= purchases.quantity %></h4></td>
+            </tr>
+            <% end %>
+      </tbody>
 
+    </table>
+
+  </div>
+</div>
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |
 <%= link_to 'Back', invoices_path %>
